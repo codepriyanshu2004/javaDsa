@@ -131,6 +131,105 @@ public class binary {
     }
 
 
+  static void lowerBound(int [] arr,int target){
+
+       int st =0;
+       int end = arr.length-1;
+
+       int lb = arr.length;
+
+         while (st<=end) {
+            int mid = st +(end-st)/2;
+            if (arr[mid]>=target) {
+                lb = Math.min(mid,lb);
+                end = mid-1;
+                
+            }else{
+                st=mid+1;
+            }
+            
+         }
+         System.out.println(lb);
+         
+  }
+
+
+  static void upperBound(int [] arr,int target){
+     int st =0;int end = arr.length-1;
+     int ub = arr.length;
+
+       while (st<=end) {
+         int mid = st+(end-st)/2;
+         if (arr[mid]>target) {
+            ub = mid;
+            end = mid-1;
+            
+         }else{
+            st=st+1;
+         }
+        
+       }
+       System.out.println(ub);
+  }
+
+
+
+    static int [] firstAndlastOcurrenece(int [] arr,int target){
+        int []ans = {-1,-1};
+
+        int st = 0;int end = arr.length-1;
+         boolean flag = false;
+        while (st<=end) {
+            int mid = st+(end-st)/2;
+            if (arr[mid]==target) {
+                 flag=true;
+                 break;
+            }else if (arr[mid]>target) {
+                  end = mid-1;
+            }else if (arr[mid]<target) {
+                st = mid+1;
+            }
+        }
+
+        if ( flag==false) {
+            return ans;
+        }
+
+         st = 0;end = arr.length-1;
+        
+         int lb =arr.length;
+        while (st<=end) {
+            int mid = st+(end-st)/2;
+            if (arr[mid]>=target) {
+                 lb = mid;
+                 end = mid-1;
+            }else{
+                st = mid+1;
+            }
+        }
+
+        ans[0] = lb;
+
+          st = 0; end = arr.length-1;
+       int ub = arr.length;
+        while (st<=end) {
+            int mid = st+(end-st)/2;
+            if (arr[mid]>target) {
+                ub = mid;
+               end = mid-1;
+            }else{
+                st = mid+1;
+            }
+            
+        }
+        ans[1] = ub-1;
+
+
+        return ans;
+
+    }
+
+
 
     public static void main(String[] args) {
        
@@ -184,6 +283,20 @@ public class binary {
 //    }
 
 
-//    for(i)
+
+    int [] arr = {10,20,30,30,40,50,60,70};
+    // int target = 30;
+    // int target = 40;
+    // int target = 25;
+    //  lowerBound(arr,target );
+    // upperBound(arr, target);
+   
+    // int target = 30;
+    int target = 5;
+    int [] ans = firstAndlastOcurrenece(arr, target);
+
+    for(int i =0;i<ans.length;i++){
+        System.out.println(ans[i]+" ");
+    }
 }
 }
