@@ -229,7 +229,34 @@ public class binary {
 
     }
 
+   static int searchInRotatedSortedArray(int [] arr,int target){
 
+      int st =0;int end=arr.length-1;
+
+       while(st<=end){            
+         int mid = st+(end-st)/2;
+         if(arr[mid]==target){
+            return mid;
+         }
+       else  if(arr[st]<=arr[mid]){          //first check kar rahe hai left part sorted hai ki nhi
+               if(arr[st]<=target && target<=arr[mid]){  // agar hai toh left part mai dhund rahe hai
+                   end=mid-1;                          
+               }else{
+                  st = mid+1;                            // check karne ke baad nhi hai toh right mai chale jayenge
+               }
+
+         }else if(arr[mid]<=arr[mid]){                    // fir check kar rahe hai right part sorted hai ki nhi
+              if(arr[mid]<=target && target<=arr[end]){      // agar hai toh right part mai dhund rahe hai
+                  st=mid+1; 
+              }else{
+                 end = mid-1;                               // check karne ke baad nhi mila toh left par mai chale jayenge
+              }
+         }
+       }
+   
+   return -1;
+
+   }
 
     public static void main(String[] args) {
        
@@ -284,7 +311,7 @@ public class binary {
 
 
 
-    int [] arr = {10,20,30,30,40,50,60,70};
+    // int [] arr = {10,20,30,30,40,50,60,70};
     // int target = 30;
     // int target = 40;
     // int target = 25;
@@ -292,11 +319,17 @@ public class binary {
     // upperBound(arr, target);
    
     // int target = 30;
-    int target = 5;
-    int [] ans = firstAndlastOcurrenece(arr, target);
+    // int target = 5;
+    // int [] ans = firstAndlastOcurrenece(arr, target);
 
-    for(int i =0;i<ans.length;i++){
-        System.out.println(ans[i]+" ");
-    }
+    // for(int i =0;i<ans.length;i++){
+    //     System.out.println(ans[i]+" ");
+    // }
+
+
+    int [] arr = {6,7,0,1,2,3,4,5};
+
+    int ans = searchInRotatedSortedArray(arr, 0);
+    System.out.println(ans);
 }
 }
