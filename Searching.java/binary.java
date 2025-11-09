@@ -229,6 +229,31 @@ public class binary {
 
     }
 
+
+
+    static int peakMountainindex(int [] arr){
+
+        int st=0;
+        int end = arr.length-1;
+
+        while (st<=end) {
+            int mid = st+(end-st)/2;
+
+            if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1]){
+                return mid;
+            }
+
+            else if(arr[mid]>arr[mid-1]&& arr[mid]<arr[mid+1]){
+                st=mid+1;
+            } 
+             else if(arr[mid]<arr[mid-1]&& arr[mid]>arr[mid+1]){
+              end = mid-1;
+            }
+        }
+
+        return -1;
+    }
+
    static int searchInRotatedSortedArray(int [] arr,int target){
 
       int st =0;int end=arr.length-1;
@@ -257,6 +282,92 @@ public class binary {
    return -1;
 
    }
+
+   static int countElement(int []arr,int x){
+      int lb = arr.length;
+      int st=0;
+      int end = arr.length-1;
+
+      while (st<=end) {
+        int mid = st+(end-st)/2;
+
+       
+        if (arr[mid]>=x) {
+            lb = mid;
+            end = end-1;
+            
+        }else  {
+             st =mid+1;
+        }
+                    
+        }
+    st=0; end = arr.length-1;
+        int ub = arr.length;
+      while (st<=end) {
+        int mid = st+(end-st)/2;
+
+       
+        if (arr[mid]>x) {
+            ub = mid;
+            end = end-1;
+            
+        }else  {
+             st =mid+1;
+        }
+                    
+        }
+         ub = ub-1;
+         int ans = ub-lb;
+        return ans+1;
+      
+        
+      }
+
+
+      static int findRotationcount(int [] arr){
+          
+        int st=0;
+        int end= arr.length-1;
+
+        while (st<end) {
+            int mid = st+(end-st)/2;
+
+            if (arr[mid]>arr[end]) {
+                st=mid+1;
+                
+            }else if (arr[mid]<arr[end]) {
+                end = end-1;
+            }
+        }
+
+        return st;
+      }
+
+  static int nearlySortedArray(int [] arr,int x){
+    int st=0;
+    int end = arr.length-1;
+
+    while (st<=end) {
+        int mid = st+(end-st)/2;
+
+        if (arr[mid]==x) {
+            return mid;
+            
+        }else if(mid-1>=st && arr[mid-1]==x){
+               return mid-1;
+        }else if(mid+1<=end && arr[mid+1]==x){
+              return mid+1;
+        }else if(arr[mid]>x){
+              end = end-2;
+        }else if(arr[mid]<x){
+            st = mid+1;
+        }
+        
+    }
+     return -1;
+  }
+
+   
 
     public static void main(String[] args) {
        
@@ -327,9 +438,29 @@ public class binary {
     // }
 
 
-    int [] arr = {6,7,0,1,2,3,4,5};
 
-    int ans = searchInRotatedSortedArray(arr, 0);
-    System.out.println(ans);
+    // int [] arr = {10,20,30,40,50,60,70,20,10};
+    // int ans = peakMountainindex(arr);
+    // System.out.println(ans);
+
+    // int [] arr = {6,7,0,1,2,3,4,5};
+
+    // int ans = searchInRotatedSortedArray(arr, 0);
+    // System.out.println(ans);
+
+    //  int [] arr = {2,4,10,10,10,18,20};
+    // int ans = countElement(arr, 10);
+    // System.out.println(ans);
+
+
+//     int [] arr = {11,12,15,18,2,5,6,8};
+//   int ans=  findRotationcount(arr);
+//   System.out.println(ans);
+
+
+int [] arr = {5,10,30,20,40};
+   int ans =nearlySortedArray(arr, 40);
+   System.out.println(ans);
+
 }
 }
