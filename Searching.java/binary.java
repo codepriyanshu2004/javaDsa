@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 public class binary {
      
 
@@ -367,6 +371,83 @@ public class binary {
      return -1;
   }
 
+  
+
+  static ArrayList<Integer>FindKclosest(int [] arr,int x,int k){
+    ArrayList<Integer> ans = new ArrayList<>();
+  int n = arr.length;
+
+     if (x<arr[0]) {                              //like -1
+        for(int i=0;i<k;i++){
+            ans.add(arr[i]);
+           
+        }
+         return ans;
+    }
+
+    if (x>arr[n-1]) {
+        for(int i=arr.length-1;i>=n-k;i--){
+            ans.add(arr[i]);
+          
+        }
+          Collections.sort(ans);
+            return ans;
+        
+    }
+
+    int st=0;int end=arr.length-1;
+   int lb= end;
+    while (st<=end) {
+        int mid = st+(end-st)/2;
+
+        if (arr[mid]>=x) {
+           lb =mid;
+           end=mid-1;
+            
+        }else{
+            st=mid+1;
+        }
+        
+    }
+ 
+    int j=lb; int i=lb-1;
+
+    while (i>=0 && j<n && k>0) {
+        int disJ = Math.abs(arr[j]-x);
+        int disI = Math.abs(arr[i]-x);
+
+        if (disI<=disJ) {
+            ans.add(arr[i]);
+            i--;
+            k--;
+            
+        }else{
+            ans.add(arr[j]);
+            j++;
+            k--;
+
+        }
+  
+    }
+
+    while (i<0 && k>0) {
+        ans.add(arr[j]);
+        j++;
+        k--;
+        
+    }
+
+    while (j==n && k>0) {
+        ans.add(arr[i]);
+        i--;
+        k--;
+        
+    }
+    Collections.sort(ans);
+    return ans;
+
+  }
+
    
 
     public static void main(String[] args) {
@@ -458,9 +539,15 @@ public class binary {
 //   System.out.println(ans);
 
 
-int [] arr = {5,10,30,20,40};
-   int ans =nearlySortedArray(arr, 40);
-   System.out.println(ans);
+// int [] arr = {5,10,30,20,40};
+//    int ans =nearlySortedArray(arr, 40);
+//    System.out.println(ans);
+
+
+
+int [] arr = {1,3,5,8,9,10};
+ArrayList<Integer> ans = FindKclosest(arr, 6, 3);
+System.out.println(ans);
 
 }
 }
