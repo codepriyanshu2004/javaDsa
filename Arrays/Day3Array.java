@@ -130,11 +130,43 @@ public class Day3Array {
                             }
 
                         
-                                
+                                //010230
+                       static void zeroAndnonZero(int [] arr){
+                          int st =0;int end = arr.length-1;
+
+                          while (st<=end) {
                             
+                            if (arr[st]!=0  && arr[end]==0  ) {
+                                 
+                                int temp =arr[st];
+                                arr[st] = arr[end];
+                                arr[end] = temp;
+                                st++;
+                                end--;
+                                
+                            }else if(arr[st]==0){
+                                st++;
+                            }else if(arr[end]!=0){
+                               end--;
+                            }
+
+                          }
+                       }     
                     
                     
-                        
+                    static void demo(int [] arr){
+
+                        for(int i=0;i<arr.length;i++){
+                            for(int j=0;j<arr.length-1;j++){
+                                if (arr[j]>arr[j+1]) {
+                                    int temp = arr[j];
+                                    arr[j] = arr[j+1];
+                                    arr[j+1] = temp;
+                                    
+                                }
+                            }
+                        }
+                    }    
                     
                 
                     
@@ -155,16 +187,22 @@ public class Day3Array {
     //     System.out.print(arr[i]);
     // }
       
-    int [] arr ={-10,-3,-2,1,4,5};
-    //  int [] ans = sqaure(arr);
-    int [] ans = sqaure1(arr);
+    // int [] arr ={-10,-3,-2,1,4,5};
+    // //  int [] ans = sqaure(arr);
+    // int [] ans = sqaure1(arr);
 
-     for(int i=0;i<ans.length;i++){
-         System.out.print(ans[i]+ " ");
-     }
+    //  for(int i=0;i<ans.length;i++){
+    //      System.out.print(ans[i]+ " ");
+    //  }
 
+  int [] arr = {1,0,2,3,0};
 
+    // zeroAndnonZero(arr);
+    demo(arr);
    
+    for(int i = 0;i<arr.length;i++){
+        System.out.println(arr[i]);
+    }
 
 
     

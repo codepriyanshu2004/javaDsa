@@ -370,8 +370,8 @@ int [] arr5 ={1,2,3,4,5};
 //     System.out.print(a);
 // }
 
-rotate(arr5, 2);
-PrintArray(arr5);
+// rotate(arr5, 2);
+// PrintArray(arr5);
 
 //    pairinArray(arr5);
 //    subArray(arr5);
