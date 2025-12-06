@@ -195,14 +195,14 @@ public class Day3Array {
     //      System.out.print(ans[i]+ " ");
     //  }
 
-  int [] arr = {1,0,2,3,0};
+//   int [] arr = {1,0,2,3,0};
 
     // zeroAndnonZero(arr);
-    demo(arr);
+    // demo(arr);
    
-    for(int i = 0;i<arr.length;i++){
-        System.out.println(arr[i]);
-    }
+    // for(int i = 0;i<arr.length;i++){
+    //     System.out.println(arr[i]);
+    // }
 
 
     

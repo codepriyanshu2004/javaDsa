@@ -284,22 +284,26 @@ public class Day6Sorting {
 
 
 // 
-  int [] arr = {0,5,0,3,4,2};
+//   int [] arr = {0,5,0,3,4,2};
    
         // Zeroand1(arr);
-        zeroone(arr);
+        // zeroone(arr);
 
 
-        for(int i=0;i<arr.length;i++){
+        // for(int i=0;i<arr.length;i++){
         
-            System.out.print(arr[i]);
-        }
+        //     System.out.print(arr[i]);
+        // }
 
     //     String arr [] ={"kiwi","apple","papaya","mango"};
-    //     lexicograpical(arr);
-    //    for(String st:arr){
-    //     System.out.print(st+" ");
-    //    }
+    // //     lexicograpical(arr);
+    // //    for(String st:arr){
+    // //     System.out.print(st+" ");
+    // //    }
+
+    // for(int i=0;i<arr.length;i++){
+    //     System.out.println(arr[i]);
+    // }
 
 //     int []arr ={11,33,42,71};
 //     int [] brr = {26,54,69,81,99};

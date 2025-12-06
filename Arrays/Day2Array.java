@@ -350,7 +350,7 @@ static void search(int [] arr,int x){
     // int []arr2={1,3,1,3,5,6,5};
     // System.out.println(uniqueElement(arr2));
 
-    int [] arr3 ={3,5,7,9};
+    // int [] arr3 ={3,5,7,9};
     // System.out.println(max(arr3));
     // System.out.println(secondmax(arr3));
 
@@ -378,7 +378,7 @@ int [] arr5 ={1,2,3,4,5};
 
 //    subArrayMax(arr5);
 
-//    int [] arr = {-2,-3,4,-1,-2,1,5,-3};
+   int [] arr = {-2,-3,4,-1,-2,1,5,-3};
 
 //   subArrayMax(arr);
 //   kadanealorigtm(arr);
