@@ -3,45 +3,45 @@ import java.util.Scanner;
 
 public class ifElse {
 
-    static void prime(int n){
-        int count = 0;
-        for(int i=2;i<=n-1;i++){
-            if (n%i==0) {
-                count++;
-            }
-        }
+    // static void prime(int n){
+    //     int count = 0;
+    //     for(int i=2;i<=n-1;i++){
+    //         if (n%i==0) {
+    //             count++;
+    //         }
+    //     }
 
-        if (count==2) {
-            System.out.println("Not prime");
+    //     if (count==2) {
+    //         System.out.println("Not prime");
             
-        }else{
-            System.out.println("prime");
-        }
-    }
+    //     }else{
+    //         System.out.println("prime");
+    //     }
+    // }
 
 
-     static boolean primes(int n){
+//      static boolean primes(int n){
        
-        for(int i=2;i<=n-1;i++){
-            if (n%i==0) {
-                return false;
-            }
-        }
+//         for(int i=2;i<=n-1;i++){
+//             if (n%i==0) {
+//                 return false;
+//             }
+//         }
 
-      return true;
-    }
+//       return true;
+//     }
 
-   static void  primeRange(int n){
+//    static void  primeRange(int n){
 
-     for(int i=2;i<=n;i++){
-       if (primes(i)) {
-        System.out.print(i+" ");
+//      for(int i=2;i<=n;i++){
+//        if (primes(i)) {
+//         System.out.print(i+" ");
         
-       }
+//        }
        
-     }
-     System.out.println();
-   }
+//      }
+//      System.out.println();
+//    }
 
      
 
@@ -303,7 +303,7 @@ public class ifElse {
 //     }
 //     System.out.println();
 
-// }}
+// }}}
 
 
 
@@ -331,7 +331,7 @@ public class ifElse {
 // }
 
  
-
+//     }}
 
 
 
@@ -365,9 +365,9 @@ public class ifElse {
 // System.out.println(primes(6));
    
 
-    primeRange(10);
+    // primeRange(10);
 
-    }}
+    // }}
 
  
  

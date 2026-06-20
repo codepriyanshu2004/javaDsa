@@ -57,7 +57,7 @@ public class Day4Array {
         }
     }
     public static void main(String[] args) {
-        // int [] a={2,1,3,4};
+        int [] a={2,1,3,4};
 
     //     Scanner sc = new Scanner(System.in);
     //     System.out.println("Enter the size");
@@ -77,15 +77,15 @@ public class Day4Array {
     //         System.out.println(arr[i]);
     //     }
 
-    // int a1 [] = {2,2,3,3};
-    int a2 [] = {2,2,2,2};
-    System.out.println(Equalpartition(a2));
+    int a1 [] = {2,2,3,3};
+    // int a2 [] = {2,2,2,2};
+    System.out.println(Equalpartition(a1));
 
        
     // suffix(a);
         
 
-    // // prefix(a);
+    // prefix(a);
     // for(int i=0;i<a.length;i++){
     //     System.out.print(a[i]+" ");
     // }

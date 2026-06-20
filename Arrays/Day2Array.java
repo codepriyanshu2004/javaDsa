@@ -297,6 +297,7 @@ static  void swap1(int [] arr,int i,int j){
     int temp =arr[i];
     arr[i]=arr[j];
     arr[j]=temp;
+    PrintArray(arr);
 
 }
 
@@ -366,6 +367,7 @@ static void search(int [] arr,int x){
 // reserveInpace(arr4);
 
 int [] arr5 ={1,2,3,4,5};
+//    swap1(arr5,2,4);
 // for(int i=0;i<arr5.length;i++){
 //     System.out.print(a);
 // }
@@ -378,7 +380,7 @@ int [] arr5 ={1,2,3,4,5};
 
 //    subArrayMax(arr5);
 
-   int [] arr = {-2,-3,4,-1,-2,1,5,-3};
+//    int [] arr = {-2,-3,4,-1,-2,1,5,-3};
 
 //   subArrayMax(arr);
 //   kadanealorigtm(arr);

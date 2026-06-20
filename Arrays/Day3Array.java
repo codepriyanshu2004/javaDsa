@@ -187,13 +187,13 @@ public class Day3Array {
     //     System.out.print(arr[i]);
     // }
       
-    // int [] arr ={-10,-3,-2,1,4,5};
+    int [] arr ={-10,-3,-2,1,4,5};
     // //  int [] ans = sqaure(arr);
-    // int [] ans = sqaure1(arr);
+    int [] ans = sqaure1(arr);
 
-    //  for(int i=0;i<ans.length;i++){
-    //      System.out.print(ans[i]+ " ");
-    //  }
+     for(int i=0;i<ans.length;i++){
+         System.out.print(ans[i]+ " ");
+     }
 
 //   int [] arr = {1,0,2,3,0};
 
